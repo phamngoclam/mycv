@@ -1,11 +1,16 @@
 .navigation {
     display: block;
     overflow: auto;
+    text-align: center;
+    h2 {display: inline-block; float: left}
     ul {
+        display: inline-block;
         float: right;
         li {
-            float: left;
+            display: inline-block;
             list-style-type: none;
+            margin-left: 20px;
+            a {text-decoration: none}
         }
     }
 }
