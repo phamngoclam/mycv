@@ -1,0 +1,11 @@
+.navigation {
+    display: block;
+    overflow: auto;
+    ul {
+        float: right;
+        li {
+            float: left;
+            list-style-type: none;
+        }
+    }
+}

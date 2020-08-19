@@ -1,24 +1,23 @@
 import React from 'react';
-import logo from '../../assets/img/logo.svg';
+import Navigation from "../Navigation/Navigation";
+import Information from "../Information/Information";
 import './App.scss';
+
+const cvData = {
+    information: {name: 'Pham Ngoc Lam', DOB: '16/10/1995', sex: 'Male', address: 'Number 42 18 Street, Linh Trung Ward, Thu Duc District'},
+    objective: {},
+    education: {},
+    skills: {},
+    experience: {},
+    knowledge: {},
+    just4fun: {}
+}
 
 function App() {
     return (
         <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo"/>
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
+            <Navigation/>
+            <Information infoData={cvData.information} />
         </div>
     );
 }
