@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'primary-font-regular';
+    src: url("./assets/font/quicksand/Quicksand-Regular.ttf");
+}
+@font-face {
+    font-family: 'primary-font-bold';
+    src: url("./assets/font/quicksand/Quicksand-Bold.ttf");
+}
+@font-face {
+    font-family: 'primary-font-light';
+    src: url("./assets/font/quicksand/Quicksand-Light.ttf");
+}
+@font-face {
+    font-family: 'primary-font-medium';
+    src: url("./assets/font/quicksand/Quicksand-Medium.ttf");
+}
+@font-face {
+    font-family: 'primary-font-semibold';
+    src: url("./assets/font/quicksand/Quicksand-SemiBold.ttf");
+}
+:root {
+    --color-primary: rgb(12, 213, 210);
+}

@@ -1,10 +1,8 @@
 import React from 'react';
-import Objective from "../Objective/Objective";
 import Navigation from "../Navigation/Navigation";
-import Information from "../Information/Information";
-import Skills from "../Skills/Skills";
-import Experience from "../Experience/Experience";
 import './App.scss';
+import {BrowserRouter as Router, Route } from 'react-router-dom';
+import routes from "../../routes";
 
 const cvData = {
     information: {
@@ -27,23 +25,23 @@ const cvData = {
 class App extends React.Component {
     render() {
         return (
-            <div className="App">
-                <div className="sidebar">
-                    dvdvds
-                </div>
-                <div className="container">
-                    <Navigation/>
-                    <div className="content-wrapper">
-                        <Objective objectiveData={cvData.objective}/>
-                        <Information infoData={cvData.information}/>
-                        <Skills/>
-                        <Experience/>
+            <Router>
+                <div className="App">
+                    <div className="sidebar">
+                        dvdvds
+                    </div>
+                    <div className="container">
+                        <Navigation/>
+                        <div className="content-wrapper">
+                            {routes.map(route => (<Route key={route.id} {...route}/>))}
+                        </div>
+                    </div>
+                    <div className="nav-control">
+                        dsfsd
                     </div>
                 </div>
-                <div className="nav-control">
-                    dsfsd
-                </div>
-            </div>
+            </Router>
+            
         );
     }
 }
