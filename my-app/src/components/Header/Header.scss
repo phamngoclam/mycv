@@ -1,0 +1,36 @@
+.header {
+    display: flex;
+
+    .float-left {
+        display: none;
+    }
+    .float-right {
+        display: none
+    }
+    .nav-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 30px;
+        padding: 20px 20px;
+        background-color: cadetblue;
+
+        h2 {
+            display: inline-block;
+            font-family: 'primary-font-bold', sans-serif;
+            margin: 0;
+        }
+        .menu-icon {
+            position: absolute;
+            z-index: 2;
+            right: 20px;
+            top: 35px;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            outline: none;
+            font-size: 22px;
+        }
+    }
+}

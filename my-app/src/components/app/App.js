@@ -1,7 +1,8 @@
 import React from 'react';
-import Navigation from "../Navigation/Navigation";
+import Header from "../Header/Header";
+import SideNav from "../SideNav/SideNav";
 import './App.scss';
-import {BrowserRouter as Router, Route } from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import routes from "../../routes";
 
 const cvData = {
@@ -23,25 +24,39 @@ const cvData = {
 }
 
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {isShowNav: false};
+    }
+    
+    toggleSideNav = () => {
+        this.setState({isShowNav: !this.state.isShowNav})
+    }
+    handleMouseDown = (e) => {
+        this.toggleSideNav();
+        console.log(this.state.isShowNav);
+        e.stopPropagation();
+    }
+    
     render() {
         return (
             <Router>
                 <div className="App">
-                    <div className="sidebar">
-                        dvdvds
-                    </div>
+                    <Header isShowNav={this.state.isShowNav} handleShowNav={this.handleMouseDown}/>
+                    <SideNav isShowNav={this.state.isShowNav} handleMouseDown={this.handleMouseDown}/>
                     <div className="container">
-                        <Navigation/>
+                        <div className="sidebar">
+                            dvdvds
+                        </div>
                         <div className="content-wrapper">
                             {routes.map(route => (<Route key={route.id} {...route}/>))}
                         </div>
-                    </div>
-                    <div className="nav-control">
-                        dsfsd
+                        <div className="nav-control">
+                            dsfsd
+                        </div>
                     </div>
                 </div>
             </Router>
-            
         );
     }
 }
