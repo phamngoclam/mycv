@@ -3,9 +3,13 @@
 body {
     margin: 0;
 }
-
+#root {
+    background-image: url("../../assets/img/background.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
 .App {
-    background-color: #F2F2F2;
     width: 100%;
     margin: auto;
     font-family: 'primary-font-regular', sans-serif;
@@ -15,23 +19,35 @@ body {
         display: flex;
         flex-direction: column;
         .sidebar {
-            width: 100%;
+            flex-basis: 100%;
         }
         .nav-control {
             display: none;
         }
         .content-wrapper {
-            width: 100%;
-            padding: 10px 20px;
-            border: 1px solid var(--color-border);
-            background-color: #FFFFFF;
+            flex-basis: 100%;
             box-sizing: border-box;
         }
     }
 }
 
-@media only screen and (min-width: 767px) {
-
+@media (min-width: 992px) {
+    .App {
+        width: 80%;
+        .container {
+            flex-direction: row;
+            .sidebar {
+                flex-basis: 25%;
+            }
+            .content-wrapper {
+                flex-basis: 70%;
+            }
+            .nav-control {
+                display: block;
+                flex-basis: 5%;
+            }
+        }
+    }
 }
 
 

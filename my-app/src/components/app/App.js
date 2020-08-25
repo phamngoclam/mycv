@@ -34,7 +34,6 @@ class App extends React.Component {
     }
     handleMouseDown = (e) => {
         this.toggleSideNav();
-        console.log(this.state.isShowNav);
         e.stopPropagation();
     }
     
@@ -46,13 +45,13 @@ class App extends React.Component {
                     <SideNav isShowNav={this.state.isShowNav} handleMouseDown={this.handleMouseDown}/>
                     <div className="container">
                         <div className="sidebar">
-                            dvdvds
+                            Profile Picture
                         </div>
                         <div className="content-wrapper">
                             {routes.map(route => (<Route key={route.id} {...route}/>))}
                         </div>
                         <div className="nav-control">
-                            dsfsd
+                            Slide Control
                         </div>
                     </div>
                 </div>

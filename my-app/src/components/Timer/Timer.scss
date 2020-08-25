@@ -1,1 +1,9 @@
-.timer h4 {text-align: right}
+.timer {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    display: inline-block;
+    h4 {
+        margin: 0;
+    }
+}

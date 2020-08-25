@@ -1,0 +1,10 @@
+.Homepage {
+    position: relative;
+    .Objective, .information, .Skills, .Education, .Experience {
+        padding: 20px 20px;
+        border: 1px solid var(--color-border);
+        background-color: var(--color-content);
+        p {line-height: 25px; word-spacing: 5px;}
+        margin-bottom: 30px;
+    }
+}

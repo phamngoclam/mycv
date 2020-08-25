@@ -16,16 +16,35 @@
             display: block;
             text-decoration: none;
             font-family: 'primary-font-bold';
-            color: gray;
+            color: black;
             font-size: 18px;
             width: 100%;
             text-align: center;
             &.active {
-                color: var(--color-primary);
+                color: darkcyan;
             }
         }
     }
     &.expand {
         transform: translateX(-100%);
+    }
+}
+
+@media (min-width: 992px) {
+    .SideNav {
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        top: 0;
+        right: 5%;
+        width: 50%;
+        background: none;
+        li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+        &.expand {
+            transform: translateX(0);
+        }
     }
 }
