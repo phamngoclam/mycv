@@ -1,13 +1,12 @@
 //---MOBILE-FIRST DESIGN
-
 body {
     margin: 0;
 }
-#root {
-    background-image: url("../../assets/img/background.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+.container-app {
+    background: none;
+    #left-polygon, #right-polygon {
+        display: none;
+    }
 }
 .App {
     width: 100%;
@@ -15,38 +14,80 @@ body {
     font-family: 'primary-font-regular', sans-serif;
     position: relative;
     overflow-x: hidden;
+    .sidebar {
+        position: absolute;
+        top: 70px;
+        width: 100%;
+    }
     .container {
-        display: flex;
-        flex-direction: column;
-        .sidebar {
-            flex-basis: 100%;
-        }
-        .nav-control {
-            display: none;
-        }
         .content-wrapper {
+            margin-top: 380px;
             flex-basis: 100%;
             box-sizing: border-box;
+            .copyright {
+                text-align: center;
+            }
         }
+    }
+    .nav-control {
+        display: none;
     }
 }
 
 @media (min-width: 992px) {
-    .App {
-        width: 80%;
-        .container {
-            flex-direction: row;
-            .sidebar {
-                flex-basis: 25%;
-            }
-            .content-wrapper {
-                flex-basis: 70%;
-            }
-            .nav-control {
-                display: block;
-                flex-basis: 5%;
+    .container-app {
+        background-image: url("../../assets/img/background.png");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        #left-polygon, #right-polygon {
+            position: fixed;
+            overflow: hidden;
+        }
+        #left-polygon {
+            display: block;
+            top: 0;
+            .pol {
+                fill: #e1e1e1;
             }
         }
+        #right-polygon {
+            display: block;
+            top: -100px;
+            right: -100px;
+            .pol {
+                fill: var(--color-primary);
+            }
+        }
+    }
+    .App {
+        width: 95%;
+        display: flex;
+        flex-direction: row;
+        .sidebar {
+            min-width: 275px;
+            width: 275px;
+            position: static;
+            padding-top: 100px;
+            margin-right: 20px;
+        }
+        .container {
+            flex-basis: 70%;
+            position: relative;
+            .content-wrapper {
+                margin-top: 0;
+            }
+        }
+        .nav-control {
+            display: block;
+            padding-top: 100px;
+        }
+    }
+}
+@media (min-width: 1024px) {
+    .App {
+        width: 80%;
     }
 }
 

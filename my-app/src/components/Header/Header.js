@@ -8,13 +8,11 @@ class Header extends React.Component {
     render() {
         return (
             <nav className="header">
-                <div className="float-left"></div>
                 <div className="nav-wrapper">
                     <NavLink to="/" exact><h1>LAM PHAM</h1></NavLink>
                     <button className="menu-icon" onMouseDown={this.props.handleShowNav}><FontAwesomeIcon
                         icon={this.props.isShowNav ? faTimes : faBars}/></button>
                 </div>
-                <div className="float-right"></div>
             </nav>
         );
     }

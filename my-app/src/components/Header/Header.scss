@@ -1,9 +1,4 @@
 .header {
-    display: flex;
-
-    .float-left, float-right {
-        display: none;
-    }
     .nav-wrapper {
         display: flex;
         justify-content: space-between;
@@ -36,19 +31,12 @@
 
 @media (min-width: 992px) {
     .header {
-        position: relative;
-        .float-left {
-            display: block;
-            flex-basis: 25%;
-        }
         .nav-wrapper {
-            padding: 20px 0;
+            height: 100px;
+            padding: 28px 0;
             flex-basis: 70%;
+            h1 {font-size: 35px}
             .menu-icon {display: none}
-        }
-        .float-right {
-            display: block;
-            flex-basis: 5%;
         }
     }
 }

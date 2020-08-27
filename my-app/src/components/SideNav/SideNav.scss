@@ -1,12 +1,12 @@
 .SideNav {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: calc(-100%);
     z-index: 1;
     margin: 0;
     padding: 0;
     width: 100%;
-    background-color: aquamarine;
+    background-color: rgb(243, 243, 243);
     transition: transform 0.5s ease-in-out;
     padding: 10px 0;
     li {
@@ -35,8 +35,8 @@
         display: flex;
         justify-content: flex-end;
         position: absolute;
-        top: 0;
-        right: 5%;
+        top: 15px;
+        right: 0;
         width: 50%;
         background: none;
         li {
