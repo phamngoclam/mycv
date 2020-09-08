@@ -22,3 +22,7 @@
   --color-primary: #c0e3e7;
   --color-border: #D8D8D8;
   --color-content: #FFFFFF; }
+  @media (min-width: 992px) {
+    :root .sticky {
+      position: fixed;
+      top: 5px; } }

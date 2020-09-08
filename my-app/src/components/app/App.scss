@@ -1,6 +1,9 @@
 //---MOBILE-FIRST DESIGN
 body {
     margin: 0;
+    font-size: 16px;
+    word-spacing: 0.4rem;
+    letter-spacing: 0.1rem;
 }
 .container-app {
     background: none;
@@ -81,6 +84,9 @@ body {
         }
         .nav-control {
             display: block;
+            min-width: 40px;
+            width: 42px;
+            position: static;
             padding-top: 100px;
         }
     }
