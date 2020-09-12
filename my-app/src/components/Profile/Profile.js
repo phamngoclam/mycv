@@ -23,7 +23,7 @@ class Profile extends React.Component {
             <div className="Profile-wrapper" id="avatar">
                 <img className="avatar" src={Avatar} height="200" width="200" alt="avatar" />
                 <div className="contact-info">
-                    <h3>Lam Pham</h3>
+                    <h3 className="title">Lam Pham</h3>
                     <p>Software Developer</p>
                     <div className="list-contact">
                         <a href="https://facebook.com/lam1610" target="_blank"

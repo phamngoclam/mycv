@@ -1,18 +1,19 @@
 .Homepage {
     position: relative;
     .Objective, .information, .Skills, .Education, .Experience {
-        padding: 30px 50px;
+        padding: 20px 20px 20px 20px;
         border: none;
         background-color: var(--color-content);
-        p {line-height: 25px;}
-        margin-bottom: 30px;
+        margin-bottom: 0;
     }
 }
 
 @media (min-width: 992px) {
     .Homepage {
         .Objective, .information, .Skills, .Education, .Experience {
+            padding: 30px 50px;
             border: 1px solid var(--color-border);
+            margin-bottom: 30px;
         }
     }
 }

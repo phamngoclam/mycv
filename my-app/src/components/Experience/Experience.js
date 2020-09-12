@@ -5,7 +5,7 @@ class Experience extends React.Component {
     render() {
         return (
             <div className="Experience">
-                <h2>Experience</h2>
+                <h2 className="title">Experience</h2>
                 <p>
                     On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and
                     demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee

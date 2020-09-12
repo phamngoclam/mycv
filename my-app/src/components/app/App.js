@@ -59,7 +59,7 @@ class App extends React.Component {
                             
                             <div className="content-wrapper">
                                 {routes.map(route => (<Route key={route.id} {...route}/>))}
-                                <p className="copyright">LamPham Resume @ All Rights Reserved 2020</p>
+                                <p className="copyright">LamPham Resume, Created in 2020</p>
                             </div>
                         </div>
                         <div className="nav-control">

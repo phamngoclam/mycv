@@ -7,13 +7,18 @@
     transition: transform 0.5s ease-in-out;
     .contact-info {
         margin-top: 20px;
-        h3 {margin: 0}
-        .list-contact a {
-            padding: 0 10px;
-            color: black;
-            transition: all 0.3s ease-out;
-            &:hover {
-                color: #585858;
+        h3 {
+            margin: 0;
+        }
+        .list-contact {
+            margin: 30px 0;
+            a {
+                padding: 0 10px;
+                color: black;
+                transition: all 0.3s ease-out;
+                &:hover {
+                    color: #585858;
+                }
             }
         }
     }
