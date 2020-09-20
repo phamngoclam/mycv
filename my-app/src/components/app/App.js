@@ -4,44 +4,33 @@ import SideNav from "../SideNav/SideNav";
 import Profile from "../Profile/Profile";
 import NavControl from "../NavControl/NavControl";
 import './App.scss';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import routes from "../../routes";
-
-const cvData = {
-    information: {
-        name: 'Pham Ngoc Lam',
-        DOB: '16/10/1995',
-        sex: 'Male',
-        address: 'No 42, 18 Street, Linh Trung Ward, Thu Duc District'
-    },
-    objective: {
-        intro: 'Hello, I\'m Pham Ngoc Lam',
-        content: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English.'
-    },
-    education: {},
-    skills: {},
-    experience: {},
-    knowledge: {},
-    just4fun: {}
-}
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Home from "../../pages/Home/Home";
+import Blog from "../../pages/Blog/Blog";
+import Just4fun from "../../pages/Just4Fun/Just4fun";
+import NotFound from "../NotFound/NotFound";
 
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {isShowNav: false};
-    }
-    
+        this.state = {  isShowNav: false,
+                        isHideProfile: true};
+    };
     toggleSideNav = () => {
-        this.setState({isShowNav: !this.state.isShowNav})
-    }
+        this.setState({isShowNav: !this.state.isShowNav});
+    };
     handleMouseDown = (e) => {
         this.toggleSideNav();
         e.stopPropagation();
+    };
+    hideProfile = () => {
+        console.log('hideProfile');
+        this.setState({isHideProfile: !this.state.isHideProfile});
     }
     
     render() {
-        return (
-            <div className="container-app">
+        return(
+            <div className="App">
                 <svg id="left-polygon" height="519" width="758">
                     <polygon className="pol" points="0,455,693,352,173,0,92,0,0,71"></polygon>
                 </svg>
@@ -49,7 +38,7 @@ class App extends React.Component {
                     <polygon className="pol" points="0,0,633,0,633,536"></polygon>
                 </svg>
                 <Router>
-                    <div className="App">
+                    <div className="container-app">
                         <div className="sidebar">
                             <Profile/>
                         </div>
@@ -58,7 +47,12 @@ class App extends React.Component {
                             <SideNav isShowNav={this.state.isShowNav} handleMouseDown={this.handleMouseDown}/>
                             
                             <div className="content-wrapper">
-                                {routes.map(route => (<Route key={route.id} {...route}/>))}
+                                <Switch>
+                                    <Route path="/" exact render =  {(match, props) => <Home {...props} match={match} hideProfile={this.hideProfile}/>}/>
+                                    <Route path="/blog" exact render =  {(match, props) => <Blog {...props} match={match}/>}/>
+                                    <Route path="/just4fun" exact render =  {(match, props) => <Just4fun {...props} match={match}/>}/>
+                                    <Route render =  {() => <NotFound />}/>
+                                </Switch>
                                 <p className="copyright">LamPham Resume, Created in 2020</p>
                             </div>
                         </div>

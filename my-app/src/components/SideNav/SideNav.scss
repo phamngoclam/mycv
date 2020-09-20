@@ -25,6 +25,17 @@
             }
         }
     }
+    .close-icon {
+        position: absolute;
+        right: 20px;
+        top: 35px;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        outline: none;
+        font-size: 22px;
+    }
     &.expand {
         transform: translateX(-100%);
     }
@@ -46,5 +57,6 @@
         &.expand {
             transform: translateX(0);
         }
+        .close-icon {display: none}
     }
 }

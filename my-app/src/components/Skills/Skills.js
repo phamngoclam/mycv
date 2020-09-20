@@ -17,6 +17,7 @@ class Skills extends React.Component {
                     </div>
                     <div className="skill-item soft-skill">
                         <h3 className="secondary-title">Soft Skills</h3>
+                        <p className="skill-title">Charitable activities</p>
                     </div>
                 </div>
             </div>

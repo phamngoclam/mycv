@@ -1,6 +1,6 @@
-.Homepage {
+.Home {
     position: relative;
-    .Objective, .information, .Skills, .Education, .Experience {
+    .Objective, .Information, .Skills, .Education, .Experience {
         padding: 20px 20px 20px 20px;
         border: none;
         background-color: var(--color-content);
@@ -9,8 +9,8 @@
 }
 
 @media (min-width: 992px) {
-    .Homepage {
-        .Objective, .information, .Skills, .Education, .Experience {
+    .Home {
+        .Objective, .Information, .Skills, .Education, .Experience {
             padding: 30px 50px;
             border: 1px solid var(--color-border);
             margin-bottom: 30px;

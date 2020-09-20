@@ -7,6 +7,10 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import AnimationMixin from "../../plugin/animation";
 
 class Profile extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {isShowProfile: true};
+    }
     componentDidMount() {
         window.addEventListener("scroll", this.scrollEvent, true)
     }
@@ -20,7 +24,7 @@ class Profile extends React.Component {
     
     render() {
         return(
-            <div className="Profile-wrapper" id="avatar">
+            <div className="Profile" id="avatar">
                 <img className="avatar" src={Avatar} height="200" width="200" alt="avatar" />
                 <div className="contact-info">
                     <h3 className="title">Lam Pham</h3>

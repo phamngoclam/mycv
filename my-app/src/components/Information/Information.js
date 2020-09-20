@@ -4,7 +4,7 @@ import './Information.scss';
 class Information extends React.Component {
     render() {
         return (
-            <div className="information">
+            <div className="Information">
                 <h2 className="title">Information</h2>
                 <dl className="content">
                     <dt className="list-title">Full Name</dt>

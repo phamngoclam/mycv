@@ -5,7 +5,7 @@ class ProcessLine extends React.Component {
     size = 'M 0,2 L ' + this.props.value + ',2';
     render() {
         return (
-            <div className="process-line">
+            <div className="ProcessLine">
                 <p className="skill-title">{this.props.title}</p>
                 <div className="process-bar">
                     <svg viewBox="0 0 100 5" preserveAspectRatio="none">

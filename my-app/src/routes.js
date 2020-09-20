@@ -1,22 +1,46 @@
-import Home from "./components/Home/Home";
-import Blog from "./components/Blog/Blog";
-import Just4fun from "./components/Just4Fun/Just4fun";
+import React from "react";
+import Home from "./pages/Home/Home";
+import Blog from "./pages/Blog/Blog";
+import Just4fun from "./pages/Just4Fun/Just4fun";
+import NotFound from "./components/NotFound/NotFound";
 
 const routes = [
     {
-        id: 0,
+        key: 0,
         exact: true,
         path: "/",
-        component: Home
+        render: ({match, props}) => <Home {...props} match={match} />
     }, {
-        id: 1,
+        key: 1,
         path: "/blog",
-        component: Blog
+        render: () => <Blog/>
     }, {
-        id: 2,
+        key: 2,
         path: "/just4fun",
-        component: Just4fun
+        render: () => <Just4fun/>
+    }, {
+        key: 3,
+        render: () => <NotFound/>
     }
 ];
 
-export default routes;
+const nav = [
+    {
+        key: 0,
+        name: "Home",
+        path: "/",
+        exact: true
+    }, {
+        key: 1,
+        name: "Blog",
+        path: "/blog",
+        exact: false
+    }, {
+        key: 2,
+        name: "Just4fun",
+        path: "/just4fun",
+        exact: false
+    }
+];
+
+export {routes, nav};

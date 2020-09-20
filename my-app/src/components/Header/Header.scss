@@ -1,4 +1,4 @@
-.header {
+.Header {
     .nav-wrapper {
         display: flex;
         justify-content: space-between;
@@ -16,7 +16,6 @@
         }
         .menu-icon {
             position: absolute;
-            z-index: 2;
             right: 20px;
             top: 35px;
             -ms-transform: translateY(-50%);
@@ -30,7 +29,7 @@
 }
 
 @media (min-width: 992px) {
-    .header {
+    .Header {
         .nav-wrapper {
             height: 100px;
             padding: 28px 0;

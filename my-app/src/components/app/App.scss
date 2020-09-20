@@ -5,48 +5,58 @@ body {
     word-spacing: 0.2rem;
     letter-spacing: 0.1rem;
 }
-.container-app {
+.App {
     background: none;
     #left-polygon, #right-polygon {
         display: none;
     }
-}
-.App {
-    width: 100%;
-    margin: auto;
-    font-family: 'primary-font-regular', sans-serif;
-    position: relative;
-    .title {
-        font-family: primary-font-bold;
-        font-size: 1.5rem;
-        text-transform: uppercase;
-        margin: 10px 0 40px 0;
-    }
-    .secondary-title {
-        margin-top: 0;
-    }
-    .sidebar {
-        position: absolute;
-        top: 70px;
+
+    .container-app {
         width: 100%;
-    }
-    .container {
-        .content-wrapper {
-            margin-top: 400px;
-            flex-basis: 100%;
-            box-sizing: border-box;
-            .copyright {
-                text-align: center;
+        margin: auto;
+        font-family: 'primary-font-regular', sans-serif;
+        position: relative;
+        .title {
+            font-family: primary-font-bold;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            margin: 10px 0 40px 0;
+        }
+        .secondary-title {
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+        .skill-title {
+            font-family: primary-font-bold;
+            font-size: 0.9rem;
+            letter-spacing: 0.01rem;
+            word-spacing: 1px;
+            line-height: 1.4rem;
+            margin-bottom: 5px;
+        }
+        .sidebar {
+            position: absolute;
+            top: 70px;
+            width: 100%;
+        }
+        .container {
+            .content-wrapper {
+                margin-top: 400px;
+                flex-basis: 100%;
+                box-sizing: border-box;
+                .copyright {
+                    text-align: center;
+                }
             }
         }
-    }
-    .nav-control {
-        display: none;
+        .nav-control {
+            display: none;
+        }
     }
 }
 
 @media (min-width: 992px) {
-    .container-app {
+    .App {
         background-image: url("../../assets/img/background.png");
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -75,37 +85,40 @@ body {
             position: fixed;
             top: 5px;
         }
-    }
-    .App {
-        width: 95%;
-        display: flex;
-        flex-direction: row;
-        .sidebar {
-            min-width: 275px;
-            width: 275px;
-            position: static;
-            padding-top: 100px;
-            margin-right: 30px;
-        }
-        .container {
-            flex-basis: 70%;
-            position: relative;
-            .content-wrapper {
-                margin-top: 0;
+        .container-app {
+            width: 95%;
+            display: flex;
+            flex-direction: row;
+            .sidebar {
+                min-width: 275px;
+                width: 275px;
+                position: static;
+                padding-top: 100px;
+                margin-right: 30px;
+            }
+            .container {
+                flex-basis: 70%;
+                position: relative;
+                .content-wrapper {
+                    margin-top: 0;
+                }
+            }
+            .nav-control {
+                display: block;
+                min-width: 40px;
+                width: 42px;
+                position: static;
+                padding-top: 100px;
             }
         }
-        .nav-control {
-            display: block;
-            min-width: 40px;
-            width: 42px;
-            position: static;
-            padding-top: 100px;
-        }
     }
+
 }
 @media (min-width: 1024px) {
     .App {
-        width: 90%;
+        .container-app {
+            width: 80%;
+        }
     }
 }
 
