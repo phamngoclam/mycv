@@ -8,13 +8,13 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from "../../pages/Home/Home";
 import Blog from "../../pages/Blog/Blog";
 import Just4fun from "../../pages/Just4Fun/Just4fun";
-import NotFound from "../NotFound/NotFound";
+import NotFound from "../../pages/NotFound/NotFound";
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {  isShowNav: false,
-                        isHideProfile: true};
+                        isShowProfile: true};
     };
     toggleSideNav = () => {
         this.setState({isShowNav: !this.state.isShowNav});
@@ -23,10 +23,12 @@ class App extends React.Component {
         this.toggleSideNav();
         e.stopPropagation();
     };
+    showProfile = () => {
+        this.setState({isShowProfile: true});
+    };
     hideProfile = () => {
-        console.log('hideProfile');
-        this.setState({isHideProfile: !this.state.isHideProfile});
-    }
+        this.setState({isShowProfile: false});
+    };
     
     render() {
         return(
@@ -40,18 +42,18 @@ class App extends React.Component {
                 <Router>
                     <div className="container-app">
                         <div className="sidebar">
-                            <Profile/>
+                            {this.state.isShowProfile && <Profile/>}
                         </div>
                         <div className="container">
                             <Header isShowNav={this.state.isShowNav} handleShowNav={this.handleMouseDown}/>
                             <SideNav isShowNav={this.state.isShowNav} handleMouseDown={this.handleMouseDown}/>
                             
-                            <div className="content-wrapper">
+                            <div className="content-wrapper" id="container-Id">
                                 <Switch>
-                                    <Route path="/" exact render =  {(match, props) => <Home {...props} match={match} hideProfile={this.hideProfile}/>}/>
-                                    <Route path="/blog" exact render =  {(match, props) => <Blog {...props} match={match}/>}/>
-                                    <Route path="/just4fun" exact render =  {(match, props) => <Just4fun {...props} match={match}/>}/>
-                                    <Route render =  {() => <NotFound />}/>
+                                    <Route path="/" exact render =  {(match, props) => <Home {...props} match={match} showProfile={this.showProfile}/>}/>
+                                    <Route path="/blog" exact render =  {(match, props) => <Blog {...props} match={match} hideProfile={this.hideProfile}/>}/>
+                                    <Route path="/just4fun" exact render =  {(match, props) => <Just4fun {...props} match={match} hideProfile={this.hideProfile}/>}/>
+                                    <Route render =  {() => <NotFound hideProfile={this.hideProfile}/>}/>
                                 </Switch>
                                 <p className="copyright">LamPham Resume, Created in 2020</p>
                             </div>

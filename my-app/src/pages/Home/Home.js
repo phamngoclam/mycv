@@ -1,14 +1,17 @@
 import React from "react";
-import {isMobile} from "react-device-detect";
 import Objective from "../../components/Objective/Objective";
 import Information from "../../components/Information/Information";
 import Skills from "../../components/Skills/Skills";
 import Education from "../../components/Education/Education";
 import Experience from "../../components/Experience/Experience";
-import './Home.scss'
+import './Home.scss';
+import {isMobile} from "react-device-detect";
+
 class Home extends React.Component {
-    componentWillMount() {
-        this.props.hideProfile();
+    UNSAFE_componentWillMount() {
+        if (isMobile) {
+            this.props.showProfile();
+        }
     }
     
     render() {
@@ -21,9 +24,6 @@ class Home extends React.Component {
             <Experience/>
         </div>
         )
-    }
-    componentDidMount() {
-        console.log('profile');
     }
 }
 

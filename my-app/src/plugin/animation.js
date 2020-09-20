@@ -6,6 +6,10 @@ var AnimationMixin =  {
         } else {
             elDom.classList.remove("sticky");
         }
+    },
+    customHomepage: function () {
+        const containerEl = document.getElementById("container-Id");
+        
     }
 };
 export default AnimationMixin;

@@ -2,7 +2,7 @@ import React from "react";
 import Home from "./pages/Home/Home";
 import Blog from "./pages/Blog/Blog";
 import Just4fun from "./pages/Just4Fun/Just4fun";
-import NotFound from "./components/NotFound/NotFound";
+import NotFound from "./pages/NotFound/NotFound";
 
 const routes = [
     {
